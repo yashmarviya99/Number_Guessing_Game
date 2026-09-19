@@ -1,10 +1,5 @@
-/* ==========================================================================
-   Guess My Number! - Game Engine & Logic (Without localStorage)
-   ========================================================================== */
-
 'use strict';
 
-// Web Audio Synthesizer for Retro Arcade Sound Effects
 class RetroAudioEngine {
   constructor() {
     this.ctx = null;
@@ -140,7 +135,6 @@ class RetroConfetti {
 
 const confetti = new RetroConfetti();
 
-// GAME VARIABLES & ENTITIES (In-Memory Only, No localStorage)
 const MIN_NUMBER = 1;
 const MAX_NUMBER = 20;
 
@@ -150,7 +144,6 @@ let highscore = 0; // Pure in-memory variable
 let userGuesses = [];
 let gameOver = false;
 
-// DOM ELEMENT REFERENCES
 const bodyEl = document.querySelector('body');
 const secretBoxEl = document.getElementById('secret-number-box');
 const guessInputEl = document.getElementById('guess-input');
@@ -161,15 +154,12 @@ const historyBoxEl = document.getElementById('history-box');
 const checkBtn = document.getElementById('check-btn');
 const againBtn = document.getElementById('again-btn');
 
-// Initialize UI Displays
 highscoreEl.textContent = highscore;
 
-// Helper: Display Feedback Message
 const displayMessage = function (message) {
   messageEl.textContent = message;
 };
 
-// Helper: Update History UI
 const renderHistory = function () {
   if (userGuesses.length === 0) {
     historyBoxEl.innerHTML = '<span class="empty-history">None yet</span>';
@@ -184,7 +174,6 @@ const renderHistory = function () {
   });
 };
 
-// CHECK BUTTON CLICK LISTENER
 checkBtn.addEventListener('click', function () {
   audio.playClick();
   if (gameOver) return;
