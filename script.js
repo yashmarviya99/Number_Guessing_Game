@@ -221,11 +221,9 @@ checkBtn.addEventListener('click', function () {
     secretBoxEl.classList.add('win-width');
     bodyEl.style.backgroundColor = '#60b853';
 
-    // Record guess history
     userGuesses.push({ val: guess, type: 'correct' });
     renderHistory();
 
-    // Check & Update Highscore in Memory
     if (score > highscore) {
       highscore = score;
       highscoreEl.textContent = highscore;
@@ -265,7 +263,6 @@ checkBtn.addEventListener('click', function () {
   guessInputEl.focus();
 });
 
-// AGAIN / RESET BUTTON CLICK LISTENER
 againBtn.addEventListener('click', function () {
   audio.playClick();
   
