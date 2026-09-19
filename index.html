@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess My Number!</title>
+  <meta name="description" content="Pixel perfect Guess My Number game with retro arcade styling, responsive layout, input validation, highscore persistence, and sound effects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> -->
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <header>
+    <button class="btn again" id="again-btn">Again!</button>
+    <p class="between">(Between <span id="min-range-text">1</span> and <span id="max-range-text">20</span>)</p>
+    <h1>Guess My Number!</h1>
+    <div class="number-container">
+      <div class="number" id="secret-number-box">?</div>
+    </div>
+    <div class="line"></div>
+  </header>
+
+  <main>
+    <section class="left">
+      <div class="input-container">
+        <input type="number" class="guess" id="guess-input" min="1" max="20" placeholder="" autocomplete="off" />
+      </div>
+      <button class="btn check" id="check-btn">Check!</button>
+    </section>
+
+    <section class="right">
+      <p class="message" id="message-text">Start guessing...</p>
+      
+      <p class="label-score">
+        <span class="icon">💯</span> Score: <span class="score" id="score-text">20</span>
+      </p>
+
+      <p class="label-highscore">
+        <span class="icon">🥇</span> Highscore: <span class="highscore" id="highscore-text">0</span>
+      </p>
+
+      <div class="history-container">
+        <p class="label-history"><span class="icon">📜</span> Guesses:</p>
+        <div class="guesses-history" id="history-box">
+          <span class="empty-history">None yet</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
